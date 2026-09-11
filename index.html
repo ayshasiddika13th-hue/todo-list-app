@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-tasks"></i> My To-Do List</h1>
+            <p class="subtitle">Stay organized and productive</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="task-input" 
+                    placeholder="✨ Add a new task..."
+                    autocomplete="off"
+                >
+                <select id="categorySelect" class="category-select">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="health">Health</option>
+                    <option value="other">Other</option>
+                </select>
+                <button id="addBtn" class="btn btn-add">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-label">Total:</span>
+                <span id="totalTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Completed:</span>
+                <span id="completedTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Remaining:</span>
+                <span id="remainingTasks" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="work"><span class="category-badge work">Work</span></button>
+            <button class="filter-btn" data-filter="personal"><span class="category-badge personal">Personal</span></button>
+            <button class="filter-btn" data-filter="shopping"><span class="category-badge shopping">Shopping</span></button>
+            <button class="filter-btn" data-filter="health"><span class="category-badge health">Health</span></button>
+            <button class="filter-btn" data-filter="other"><span class="category-badge other">Other</span></button>
+            <button class="filter-btn" data-filter="completed"><i class="fas fa-check"></i> Completed</button>
+            <button class="filter-btn" data-filter="pending"><i class="fas fa-clock"></i> Pending</button>
+        </div>
+
+        <div class="actions-section">
+            <button id="sortBtn" class="btn btn-secondary">
+                <i class="fas fa-sort"></i> Sort
+            </button>
+            <button id="clearCompletedBtn" class="btn btn-warning">
+                <i class="fas fa-trash"></i> Clear Completed
+            </button>
+            <button id="exportBtn" class="btn btn-info">
+                <i class="fas fa-download"></i> Export
+            </button>
+        </div>
+
+        <div class="tasks-section">
+            <div id="tasksList" class="tasks-list">
+                <div class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No tasks yet. Add one to get started! 🚀</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
